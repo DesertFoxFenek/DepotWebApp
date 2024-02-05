@@ -1,14 +1,14 @@
-from DepotWebApp.States.login_state import LoginState
 from DepotWebApp.Services.user_service import User
 import reflex as rx
 
 class Data:
-    vehicles = []
-    lines = []
-    brigades = []
+    vehicles: list
+    lines: list
+    brigades: list
 
-    def get_data(self):
-        self.ThisDepot = Depot(LoginState.depot[0],LoginState.depot[1],LoginState.depot[2])
+    def get_data(self,depot_info):
+        print(depot_info[0])
+        self.ThisDepot = Depot(depot_info[0],depot_info[1],depot_info[2])
         self.ThisDepot.get_vehicles()
 
         self.ThisLines = OperativeLines(self.ThisDepot.DepotType)
@@ -24,9 +24,10 @@ class Depot:
         self.DepotName = DepotName
         self.DepotType = DepotType
         self.VehicleList = []
+        self.UserDummy = User()
 
     def get_vehicles(self):
-        self.temp_data = LoginState.User.fetch_data_vehicle(self.DepotNumber)
+        self.temp_data = self.UserDummy.fetch_data_vehicle(self.DepotNumber)
 
         for row in self.temp_data:
             self.VehicleList.append(Vehicle(row[0],row[1],row[2]))
@@ -43,10 +44,10 @@ class OperativeLines:
     def __init__(self, depot_type):
         self.LineList = []
         self.depot_type = depot_type
+        self.UserDummy = User()
 
     def get_lines(self):
-        self.temp_data = LoginState.User.fetch_data_timetables()
-
+        self.temp_data = self.UserDummy.fetch_data_timetables()
         self.LineList = [row for row in self.temp_data if row[4] == self.depot_type]
 
         Data.lines = self.LineList
@@ -62,10 +63,11 @@ class Line:
 class ImportedBrigade:
     def __init__(self, depot_name):
         self.BrigadeData = []
-        self.depot_name - depot_name
+        self.depot_name = depot_name
+        self.UserDummy = User()
 
     def get_brigades(self):
-        self.temp_data = LoginState.User.fetch_brigade_table(self.depot_name)       
+        self.temp_data = self.UserDummy.fetch_brigade_table(self.depot_name)       
 
         for row in self.temp_data:
             self.BrigadeData.append(row)

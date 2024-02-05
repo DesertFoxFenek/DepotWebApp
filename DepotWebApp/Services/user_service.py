@@ -2,12 +2,12 @@ import pyodbc
 
 class User:
 
-    login = ''
-    password =''
+    login: str
+    password: str
     depots = []
 
     def __init__(self):
-        #parametry polaczenia csii ze localhost
+        #parametry polaczenia z azurkiem
         self.server = 'tcp:depot-app-db-server.database.windows.net,1433;'
         self.database = 'DepotAppDB'
         self.depots = []
@@ -40,12 +40,7 @@ class User:
         
     def get_dep_number(self, number): self.depot_num = number
 
-    def fetch_data_vehicle(self,SelectedDepotType):
-        if SelectedDepotType == 1: SQLDepotType = 1
-        elif SelectedDepotType == 2: SQLDepotType = 2
-        elif SelectedDepotType == 3 : SQLDepotType = 3
-        elif SelectedDepotType == 4 : SQLDepotType = 4
-        else: return None
+    def fetch_data_vehicle(self,SQLDepotType):
 
         self.conn_str = f'DRIVER={{ODBC Driver 18 for SQL Server}};SERVER={self.server};DATABASE={self.database};UID={self.login};PWD={self.password};TrustServerCertificate=yes;Trusted_Connection=no'
         self.connection = pyodbc.connect(self.conn_str)
@@ -70,7 +65,7 @@ class User:
 
         return self.data
     
-    def fetch_brigade_table(self, depot):
+    def fetch_brigade_table(self, depot.split()[1]): #split()[1]
         self.conn_str = f'DRIVER={{ODBC Driver 18 for SQL Server}};SERVER={self.server};DATABASE={self.database};UID={self.login};PWD={self.password};TrustServerCertificate=yes;Trusted_Connection=no'
         self.connection = pyodbc.connect(self.conn_str)
         self.cursor = self.connection.cursor()
