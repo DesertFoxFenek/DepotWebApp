@@ -65,7 +65,9 @@ class User:
 
         return self.data
     
-    def fetch_brigade_table(self, depot.split()[1]): #split()[1]
+    def fetch_brigade_table(self, depot): #split()[1]
+        depot = str(depot)
+        depot = depot.split()[1]
         self.conn_str = f'DRIVER={{ODBC Driver 18 for SQL Server}};SERVER={self.server};DATABASE={self.database};UID={self.login};PWD={self.password};TrustServerCertificate=yes;Trusted_Connection=no'
         self.connection = pyodbc.connect(self.conn_str)
         self.cursor = self.connection.cursor()

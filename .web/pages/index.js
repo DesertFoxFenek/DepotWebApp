@@ -11,16 +11,6 @@ import NextHead from "next/head"
 
 
 
-export function Input_a7b6ef1dbc2ec16742e76bfe5d13a654 () {
-  const [addEvents, connectError] = useContext(EventLoopContext);
-
-  const on_blur_b0df2f276509ef0acec4641b5ed2c4a1 = useCallback((_e0) => addEvents([Event("state.login_state.set_login", {value:_e0.target.value})], (_e0), {}), [addEvents, Event])
-
-  return (
-    <Input onBlur={on_blur_b0df2f276509ef0acec4641b5ed2c4a1} placeholder={`Login`} sx={{"width": "50", "height": "10"}} type={`text`}/>
-  )
-}
-
 export function Button_aadf83ce1311ca3979c6879725f578a0 () {
   const [addEvents, connectError] = useContext(EventLoopContext);
 
@@ -30,6 +20,16 @@ export function Button_aadf83ce1311ca3979c6879725f578a0 () {
     <Button onClick={on_click_25489bb2945b35a89473bc055bd75200}>
   {`Zaloguj`}
 </Button>
+  )
+}
+
+export function Input_a7b6ef1dbc2ec16742e76bfe5d13a654 () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+
+  const on_blur_b0df2f276509ef0acec4641b5ed2c4a1 = useCallback((_e0) => addEvents([Event("state.login_state.set_login", {value:_e0.target.value})], (_e0), {}), [addEvents, Event])
+
+  return (
+    <Input onBlur={on_blur_b0df2f276509ef0acec4641b5ed2c4a1} placeholder={`Login`} sx={{"width": "50", "height": "10"}} type={`text`}/>
   )
 }
 

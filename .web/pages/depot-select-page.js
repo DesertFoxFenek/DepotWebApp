@@ -11,30 +11,7 @@ import NextHead from "next/head"
 
 
 
-export function Button_f530fd44107b91d15a9bad8da4c935ce () {
-  const [addEvents, connectError] = useContext(EventLoopContext);
-
-  const on_click_5f843699fe57b0387e57cd2ecb26fb0a = useCallback((_e) => addEvents([Event("state.select_state.go_to_mng", {})], (_e), {}), [addEvents, Event])
-
-  return (
-    <Button onClick={on_click_5f843699fe57b0387e57cd2ecb26fb0a}>
-  {`Potwierdz`}
-</Button>
-  )
-}
-
-export function Heading_c41acc6487a3a197def89d41372971c3 () {
-  const state__select_state = useContext(StateContexts.state__select_state)
-
-
-  return (
-    <Heading>
-  {state__select_state.option}
-</Heading>
-  )
-}
-
-export function Select_288e3e8dcd7e62a4db0923174454223d () {
+export function Select_598527354fb6d04ae029fb406c0b8c4c () {
   const state__select_state = useContext(StateContexts.state__select_state)
   const [addEvents, connectError] = useContext(EventLoopContext);
 
@@ -51,6 +28,29 @@ export function Select_288e3e8dcd7e62a4db0923174454223d () {
   )
 }
 
+export function Heading_c41acc6487a3a197def89d41372971c3 () {
+  const state__select_state = useContext(StateContexts.state__select_state)
+
+
+  return (
+    <Heading>
+  {state__select_state.option}
+</Heading>
+  )
+}
+
+export function Button_f530fd44107b91d15a9bad8da4c935ce () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+
+  const on_click_5f843699fe57b0387e57cd2ecb26fb0a = useCallback((_e) => addEvents([Event("state.select_state.go_to_mng", {})], (_e), {}), [addEvents, Event])
+
+  return (
+    <Button onClick={on_click_5f843699fe57b0387e57cd2ecb26fb0a}>
+  {`Potwierdz`}
+</Button>
+  )
+}
+
 export default function Component() {
 
   return (
@@ -61,7 +61,7 @@ export default function Component() {
   <VStack spacing={`1.5em`} sx={{"fontSize": "2em", "paddingTop": "10%"}}>
   <Heading_c41acc6487a3a197def89d41372971c3/>
   <Center>
-  <Select_288e3e8dcd7e62a4db0923174454223d/>
+  <Select_598527354fb6d04ae029fb406c0b8c4c/>
 </Center>
   <Button_f530fd44107b91d15a9bad8da4c935ce/>
 </VStack>
