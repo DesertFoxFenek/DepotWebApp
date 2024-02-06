@@ -4,9 +4,12 @@ class Data:
     vehicles: list
     lines: list
     brigades: list
+    depot_info_s: list
 
     def get_data(self,depot_info):
         print(depot_info[0])
+        Data.depot_info_s = depot_info
+        
         self.ThisDepot = Depot(depot_info[0],depot_info[1],depot_info[2])
         self.ThisDepot.get_vehicles()
 

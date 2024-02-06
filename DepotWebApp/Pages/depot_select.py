@@ -19,7 +19,7 @@ def depot_select_page() -> rx.Component:
             ),
             rx.button(
                 'Potwierdz',
-                on_click=SelectState.go_to_mng,
+                on_click=SelectState.go_to_mng(SelectState.option),
             ),
             spacing="1.5em",
             font_size="2em",

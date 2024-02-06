@@ -9,10 +9,11 @@ class SelectState(rx.State):
     options: List[str] = ["Zajezdnia Borek", "Zajezdnia Olbin", "Zajezdnia Gaj", "Zajezdnia Obornicka"]
     depot: list
     #menu wyboru do przebudowy
-    def go_to_mng(self):
 
+    def go_to_mng(self,option):
+        print(option)
         DP = DataParser()
-        SelectState.depot = DP.get_depot("Zajezdnia Gaj",LoginState.depots) #nie dostaje state'a
+        SelectState.depot = DP.get_depot(option,LoginState.depots) #nie dostaje state'a
         MD = ManagerData()
         MD.get_mng_data(SelectState.depot)
 

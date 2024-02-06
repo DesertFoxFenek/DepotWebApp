@@ -14,32 +14,16 @@ import NextHead from "next/head"
 
 
 
-export function Button_f530fd44107b91d15a9bad8da4c935ce () {
+export function Button_f7ff595449f217189aced14722bcf7e4 () {
   const [addEvents, connectError] = useContext(EventLoopContext);
+  const state__select_state = useContext(StateContexts.state__select_state)
 
-  const on_click_5f843699fe57b0387e57cd2ecb26fb0a = useCallback((_e) => addEvents([Event("state.select_state.go_to_mng", {})], (_e), {}), [addEvents, Event])
+  const on_click_05a1454f098d44e2d161971ba105249d = useCallback((_e) => addEvents([Event("state.select_state.go_to_mng", {option:state__select_state.option})], (_e), {}), [addEvents, Event, state__select_state])
 
   return (
-    <Button onClick={on_click_5f843699fe57b0387e57cd2ecb26fb0a}>
+    <Button onClick={on_click_05a1454f098d44e2d161971ba105249d}>
   {`Potwierdz`}
 </Button>
-  )
-}
-
-export function Select_0c8dfa137ceaa9611814228f122cc19d () {
-  const state__select_state = useContext(StateContexts.state__select_state)
-  const [addEvents, connectError] = useContext(EventLoopContext);
-
-  const on_change_1278fdcf53f69fffb9885347b6dd9dba = useCallback((_e0) => addEvents([Event("state.select_state.set_option", {value:_e0.target.value})], (_e0), {}), [addEvents, Event])
-
-  return (
-    <Select onChange={on_change_1278fdcf53f69fffb9885347b6dd9dba} sx={{"width": "50", "height": "10", "margin": "auto"}}>
-  {state__select_state.options.map((item, index_05754def86711a0e82b997b1b77b3df2) => (
-  <option key={index_05754def86711a0e82b997b1b77b3df2} value={item}>
-  {item}
-</option>
-))}
-</Select>
   )
 }
 
@@ -54,6 +38,23 @@ export function Heading_c41acc6487a3a197def89d41372971c3 () {
   )
 }
 
+export function Select_d508761077318cfea513437fe85c0614 () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+  const state__select_state = useContext(StateContexts.state__select_state)
+
+  const on_change_1278fdcf53f69fffb9885347b6dd9dba = useCallback((_e0) => addEvents([Event("state.select_state.set_option", {value:_e0.target.value})], (_e0), {}), [addEvents, Event])
+
+  return (
+    <Select onChange={on_change_1278fdcf53f69fffb9885347b6dd9dba} sx={{"width": "50", "height": "10", "margin": "auto"}}>
+  {state__select_state.options.map((item, index_05754def86711a0e82b997b1b77b3df2) => (
+  <option key={index_05754def86711a0e82b997b1b77b3df2} value={item}>
+  {item}
+</option>
+))}
+</Select>
+  )
+}
+
 export default function Component() {
 
   return (
@@ -64,9 +65,9 @@ export default function Component() {
   <VStack spacing={`1.5em`} sx={{"fontSize": "2em", "paddingTop": "10%"}}>
   <Heading_c41acc6487a3a197def89d41372971c3/>
   <Center>
-  <Select_0c8dfa137ceaa9611814228f122cc19d/>
+  <Select_d508761077318cfea513437fe85c0614/>
 </Center>
-  <Button_f530fd44107b91d15a9bad8da4c935ce/>
+  <Button_f7ff595449f217189aced14722bcf7e4/>
 </VStack>
 </Fragment>
   <NextHead>

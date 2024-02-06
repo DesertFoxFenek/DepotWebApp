@@ -1,20 +1,20 @@
 import reflex as rx
+from DepotWebApp.States.sidebar_state import SidebarState
 
 def sidebar():
     return rx.box(
         rx.vstack(
             rx.image(src="/favicon.ico", margin="0 auto"),
             rx.heading(
-                "Sidebar",
+                SidebarState.depot_name,
                 text_align="center",
                 margin_bottom="1em",
             ),
             rx.spacer(),
-            
-            rx.text('Pole1'),
-            rx.text('Pole2'),
-            rx.text('Pole3'),
-            rx.text('Pole4'),
+
+            rx.text(SidebarState.depot_adress),
+            rx.text(SidebarState.vehicles_num),
+            rx.text(SidebarState.brigades_num),
 
             width="250px",
             padding_x="2em",
@@ -27,7 +27,7 @@ def sidebar():
         z_index="500",
     )
 
-@rx.page(route="/managment-site", title='Managment Site')
+@rx.page(route="/managment-site", title='Managment Site', on_load=SidebarState.change_state_val())
 def managment_site() -> rx.Component:
     return rx.fragment(
         rx.color_mode_button(rx.color_mode_icon(), float="right"),
