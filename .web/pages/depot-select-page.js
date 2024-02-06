@@ -5,13 +5,28 @@ import { Fragment, useCallback, useContext } from "react"
 import { Button_5cbb2952409d1e5ed6e42602daa56ec7, Fragment_fd0e7cb8f9fb4669a6805377d925fba0 } from "/utils/stateful_components"
 import { Button, Center, Heading, option, Select, VStack } from "@chakra-ui/react"
 import { EventLoopContext, StateContexts } from "/utils/context"
+import "@radix-ui/themes/styles.css"
 import "focus-visible/dist/focus-visible"
 import { Event } from "/utils/state"
+import { Theme as RadixThemesTheme } from "@radix-ui/themes"
+import theme from "/utils/theme.js"
 import NextHead from "next/head"
 
 
 
-export function Select_598527354fb6d04ae029fb406c0b8c4c () {
+export function Button_f530fd44107b91d15a9bad8da4c935ce () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+
+  const on_click_5f843699fe57b0387e57cd2ecb26fb0a = useCallback((_e) => addEvents([Event("state.select_state.go_to_mng", {})], (_e), {}), [addEvents, Event])
+
+  return (
+    <Button onClick={on_click_5f843699fe57b0387e57cd2ecb26fb0a}>
+  {`Potwierdz`}
+</Button>
+  )
+}
+
+export function Select_0c8dfa137ceaa9611814228f122cc19d () {
   const state__select_state = useContext(StateContexts.state__select_state)
   const [addEvents, connectError] = useContext(EventLoopContext);
 
@@ -39,18 +54,6 @@ export function Heading_c41acc6487a3a197def89d41372971c3 () {
   )
 }
 
-export function Button_f530fd44107b91d15a9bad8da4c935ce () {
-  const [addEvents, connectError] = useContext(EventLoopContext);
-
-  const on_click_5f843699fe57b0387e57cd2ecb26fb0a = useCallback((_e) => addEvents([Event("state.select_state.go_to_mng", {})], (_e), {}), [addEvents, Event])
-
-  return (
-    <Button onClick={on_click_5f843699fe57b0387e57cd2ecb26fb0a}>
-  {`Potwierdz`}
-</Button>
-  )
-}
-
 export default function Component() {
 
   return (
@@ -61,7 +64,7 @@ export default function Component() {
   <VStack spacing={`1.5em`} sx={{"fontSize": "2em", "paddingTop": "10%"}}>
   <Heading_c41acc6487a3a197def89d41372971c3/>
   <Center>
-  <Select_598527354fb6d04ae029fb406c0b8c4c/>
+  <Select_0c8dfa137ceaa9611814228f122cc19d/>
 </Center>
   <Button_f530fd44107b91d15a9bad8da4c935ce/>
 </VStack>

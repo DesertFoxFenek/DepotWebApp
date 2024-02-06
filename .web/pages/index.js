@@ -11,15 +11,13 @@ import NextHead from "next/head"
 
 
 
-export function Button_aadf83ce1311ca3979c6879725f578a0 () {
+export function Input_e1c0ce5e4ccf50e17bbac95aa1d7aee3 () {
   const [addEvents, connectError] = useContext(EventLoopContext);
 
-  const on_click_25489bb2945b35a89473bc055bd75200 = useCallback((_e) => addEvents([Event("state.login_state.get_auth", {})], (_e), {}), [addEvents, Event])
+  const on_blur_a85fcdf8771ae6a4010cde8adb35d12d = useCallback((_e0) => addEvents([Event("state.login_state.set_password", {value:_e0.target.value})], (_e0), {}), [addEvents, Event])
 
   return (
-    <Button onClick={on_click_25489bb2945b35a89473bc055bd75200}>
-  {`Zaloguj`}
-</Button>
+    <Input onBlur={on_blur_a85fcdf8771ae6a4010cde8adb35d12d} placeholder={`Hasło`} sx={{"width": "50", "height": "10"}} type={`password`}/>
   )
 }
 
@@ -33,13 +31,15 @@ export function Input_a7b6ef1dbc2ec16742e76bfe5d13a654 () {
   )
 }
 
-export function Input_e1c0ce5e4ccf50e17bbac95aa1d7aee3 () {
+export function Button_aadf83ce1311ca3979c6879725f578a0 () {
   const [addEvents, connectError] = useContext(EventLoopContext);
 
-  const on_blur_a85fcdf8771ae6a4010cde8adb35d12d = useCallback((_e0) => addEvents([Event("state.login_state.set_password", {value:_e0.target.value})], (_e0), {}), [addEvents, Event])
+  const on_click_25489bb2945b35a89473bc055bd75200 = useCallback((_e) => addEvents([Event("state.login_state.get_auth", {})], (_e), {}), [addEvents, Event])
 
   return (
-    <Input onBlur={on_blur_a85fcdf8771ae6a4010cde8adb35d12d} placeholder={`Hasło`} sx={{"width": "50", "height": "10"}} type={`password`}/>
+    <Button onClick={on_click_25489bb2945b35a89473bc055bd75200}>
+  {`Zaloguj`}
+</Button>
   )
 }
 

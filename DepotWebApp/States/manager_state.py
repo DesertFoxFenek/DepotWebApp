@@ -1,5 +1,6 @@
 import reflex as rx
 from DepotWebApp.Services.data_service import Data
+from DepotWebApp.Services.table_creator import Tables
 
 class ManagerData(rx.State):
     vehicle_timetable: list
@@ -10,6 +11,6 @@ class ManagerData(rx.State):
     def get_mng_data(self,depot_info):
         ThisDepot = Data()
         ThisDepot.get_data(depot_info)
-        print(ThisDepot.vehicles)
-        print(ThisDepot.lines)
-        print(ThisDepot.brigades)
+        TableGen = Tables()
+        ManagerData.vehicle_timetable, ManagerData.free_vehicles = TableGen.create_table()
+        print(ManagerData.vehicle_timetable, ManagerData.free_vehicles)

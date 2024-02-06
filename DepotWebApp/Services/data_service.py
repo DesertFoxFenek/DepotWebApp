@@ -1,5 +1,4 @@
 from DepotWebApp.Services.user_service import User
-import reflex as rx
 
 class Data:
     vehicles: list

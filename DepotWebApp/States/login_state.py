@@ -1,6 +1,5 @@
 import reflex as rx
 from DepotWebApp.Services.user_service import User
-from typing import List
 
 class LoginState(rx.State):
     login: str
@@ -16,5 +15,5 @@ class LoginState(rx.State):
             print(LoginState.depots)
             return rx.redirect("/depot-select-page")
         else:
-            return rx.window_alert("Błędna nazwa użytkownika lub hasło")
+            return rx.window_alert("Błędna nazwa użytkownika lub hasło. W przypadku dłuzszego oczekiwania i wyskoczenia błędu kliknij zaloguj jeszcze raz, najprędzej doszło do timeout'a połączenia z bazą")
             
