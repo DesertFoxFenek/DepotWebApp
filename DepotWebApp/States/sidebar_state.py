@@ -1,4 +1,5 @@
 import reflex as rx
+import pandas as pd
 from DepotWebApp.Services.data_service import Data
 
 class SidebarState(rx.State):

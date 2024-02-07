@@ -1,5 +1,4 @@
 import reflex as rx
-from DepotWebApp.Components.InputComponent import *
 from DepotWebApp.States.select_state import SelectState
 
 @rx.page(route="/depot-select-page", title='Depot Selection')

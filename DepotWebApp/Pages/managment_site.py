@@ -1,5 +1,6 @@
 import reflex as rx
 from DepotWebApp.States.sidebar_state import SidebarState
+from DepotWebApp.States.data_table_state import DataTableState
 
 def sidebar():
     return rx.box(
@@ -27,9 +28,25 @@ def sidebar():
         z_index="500",
     )
 
-@rx.page(route="/managment-site", title='Managment Site', on_load=SidebarState.change_state_val())
+@rx.page(route="/managment-site", title='Managment Site', on_load=[SidebarState.change_state_val, DataTableState.override_data])
 def managment_site() -> rx.Component:
     return rx.fragment(
         rx.color_mode_button(rx.color_mode_icon(), float="right"),
-        sidebar()
+        rx.box(
+            rx.vstack(
+                rx.spacer(),
+                rx.data_table(
+                    data=DataTableState.data,
+                    columns=DataTableState.columns,
+                    pagination=True,
+                    search=True,
+                    resizable=True,
+                ),
+            ),
+            position="fixed",
+            right="25px",
+            top="100px",
+            left="350px",
+        ),
+        sidebar(),
     )

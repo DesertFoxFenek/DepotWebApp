@@ -33,5 +33,5 @@ class Tables:
         assigned_vehicle_ids = [brigade[3] for brigade in brigades]
         Tables.vehicles_unassigned = [vehicle for vehicle in vehicles if vehicle.Id not in assigned_vehicle_ids]
 
-        return Tables.vehicles_assigned, Tables.vehicles_unassigned
-        
+        return Tables.vehicles_assigned
+    

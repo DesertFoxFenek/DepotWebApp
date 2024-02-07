@@ -4,7 +4,7 @@ class Data:
     vehicles: list
     lines: list
     brigades: list
-    depot_info_s: list
+    depot_info_s: str
 
     def get_data(self,depot_info):
         print(depot_info[0])
