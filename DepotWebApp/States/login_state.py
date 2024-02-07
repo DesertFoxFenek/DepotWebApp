@@ -12,8 +12,11 @@ class LoginState(rx.State):
         self.output = ThisUser.login_user(self.login,self.password)
         if self.output == 1:
             LoginState.depots = ThisUser.depots
-            print(LoginState.depots)
+            
             return rx.redirect("/depot-select-page")
         else:
             return rx.window_alert("Błędna nazwa użytkownika lub hasło. W przypadku dłuzszego oczekiwania i wyskoczenia błędu kliknij zaloguj jeszcze raz. Najprędzej doszło do timeout'a połączenia z bazą.")
-            
+
+    def log_out(self):
+        self.reset()
+        return rx.redirect("/")

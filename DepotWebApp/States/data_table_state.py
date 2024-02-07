@@ -1,4 +1,3 @@
-import datetime
 import reflex as rx
 import pandas as pd
 
@@ -7,7 +6,7 @@ import pandas as pd
 class DataTableState(rx.State):
 
     # Define the columns for the data editor
-    columns: list[str] = ["Numer","Nazwa","Model","Linia","Brigada","Start Place","End Place","Czas przejazdu", "Wyjazd"]
+    columns: list[str] = ["Numer","Nazwa","Model","Linia","Brygada","Przystanek Startowy","Przystanek Końcowy","Czas przejazdu", "Wyjazd"]
 
     # Assuming data is provided or fetched from somewhere
     data: list

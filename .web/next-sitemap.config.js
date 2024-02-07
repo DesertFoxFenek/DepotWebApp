@@ -1,0 +1,1 @@
+module.exports = {"siteUrl": "https://depotappmpkwroc.reflex.run", "generateRobotsTxt": true, "outDir": "_static"}

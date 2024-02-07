@@ -14,33 +14,9 @@ import NextHead from "next/head"
 
 
 
-export function Heading_c41acc6487a3a197def89d41372971c3 () {
-  const state__select_state = useContext(StateContexts.state__select_state)
-
-
-  return (
-    <Heading>
-  {state__select_state.option}
-</Heading>
-  )
-}
-
-export function Button_f7ff595449f217189aced14722bcf7e4 () {
-  const state__select_state = useContext(StateContexts.state__select_state)
+export function Select_26547f4c245825e9a77838dc1a47375f () {
   const [addEvents, connectError] = useContext(EventLoopContext);
-
-  const on_click_05a1454f098d44e2d161971ba105249d = useCallback((_e) => addEvents([Event("state.select_state.go_to_mng", {option:state__select_state.option})], (_e), {}), [addEvents, Event, state__select_state])
-
-  return (
-    <Button onClick={on_click_05a1454f098d44e2d161971ba105249d}>
-  {`Potwierdz`}
-</Button>
-  )
-}
-
-export function Select_8de14e86e42a04a0bf398feeae29535a () {
   const state__select_state = useContext(StateContexts.state__select_state)
-  const [addEvents, connectError] = useContext(EventLoopContext);
 
   const on_change_1278fdcf53f69fffb9885347b6dd9dba = useCallback((_e0) => addEvents([Event("state.select_state.set_option", {value:_e0.target.value})], (_e0), {}), [addEvents, Event])
 
@@ -55,6 +31,30 @@ export function Select_8de14e86e42a04a0bf398feeae29535a () {
   )
 }
 
+export function Heading_c41acc6487a3a197def89d41372971c3 () {
+  const state__select_state = useContext(StateContexts.state__select_state)
+
+
+  return (
+    <Heading>
+  {state__select_state.option}
+</Heading>
+  )
+}
+
+export function Button_f7ff595449f217189aced14722bcf7e4 () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+  const state__select_state = useContext(StateContexts.state__select_state)
+
+  const on_click_05a1454f098d44e2d161971ba105249d = useCallback((_e) => addEvents([Event("state.select_state.go_to_mng", {option:state__select_state.option})], (_e), {}), [addEvents, Event, state__select_state])
+
+  return (
+    <Button onClick={on_click_05a1454f098d44e2d161971ba105249d}>
+  {`Potwierdz`}
+</Button>
+  )
+}
+
 export default function Component() {
 
   return (
@@ -65,7 +65,7 @@ export default function Component() {
   <VStack spacing={`1.5em`} sx={{"fontSize": "2em", "paddingTop": "10%"}}>
   <Heading_c41acc6487a3a197def89d41372971c3/>
   <Center>
-  <Select_8de14e86e42a04a0bf398feeae29535a/>
+  <Select_26547f4c245825e9a77838dc1a47375f/>
 </Center>
   <Button_f7ff595449f217189aced14722bcf7e4/>
 </VStack>

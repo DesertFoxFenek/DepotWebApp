@@ -65,8 +65,8 @@ export function Fragment_c4944d8b5ece4892844e987a2ddfe4ae () {
 }
 
 export function Button_5cbb2952409d1e5ed6e42602daa56ec7 () {
-  const [ colorMode, toggleColorMode ] = useContext(ColorModeContext)
   const [addEvents, connectError] = useContext(EventLoopContext);
+  const [ colorMode, toggleColorMode ] = useContext(ColorModeContext)
 
   const on_click_9922dd3e837b9e087c86a2522c2c93f8 = useCallback(toggleColorMode, [addEvents, Event, colorMode, toggleColorMode])
 

@@ -10,6 +10,8 @@ class Tables:
         lines = DataObj.lines
         brigades = DataObj.brigades
 
+        Tables.vehicles_assigned = []
+
         for brigade in brigades:
             brigade_id, brigade_number, line_number, vehicle_id, start_time = brigade
             vehicle_info = next((vehicle for vehicle in vehicles if vehicle.Id == vehicle_id), None)

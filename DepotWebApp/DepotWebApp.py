@@ -4,7 +4,6 @@ import reflex as rx
 from DepotWebApp.Pages.index import *
 from DepotWebApp.Pages.depot_select import *
 from DepotWebApp.Pages.managment_site import *
-from DepotWebApp.States import *
 
 
 # Create app instance and add index page.
