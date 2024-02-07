@@ -14,29 +14,6 @@ import NextHead from "next/head"
 
 
 
-export function Text_2bb435c98cbb85d29f68337cd327b186 () {
-  const state__sidebar_state = useContext(StateContexts.state__sidebar_state)
-
-
-  return (
-    <Text>
-  {state__sidebar_state.brigades_num}
-</Text>
-  )
-}
-
-export function Button_ada31a03f76209a573d1a66423fa4bed () {
-  const [addEvents, connectError] = useContext(EventLoopContext);
-
-  const on_click_0922f10ec3b2f1bc33ad0184ca94cc10 = useCallback((_e) => addEvents([Event("state.alert_dialog_state.change", {})], (_e), {}), [addEvents, Event])
-
-  return (
-    <Button onClick={on_click_0922f10ec3b2f1bc33ad0184ca94cc10} sx={{"bottom": "70px", "position": "fixed"}}>
-  {`O stronie`}
-</Button>
-  )
-}
-
 export function Button_87a012435755203bce2f4d92b11c7acf () {
   const [addEvents, connectError] = useContext(EventLoopContext);
 
@@ -49,23 +26,14 @@ export function Button_87a012435755203bce2f4d92b11c7acf () {
   )
 }
 
-export function Text_0e668654e2c4c07b29717671d68b67d0 () {
+export function Heading_73213fd57920090aa2f067d6bb5028aa () {
   const state__sidebar_state = useContext(StateContexts.state__sidebar_state)
 
 
   return (
-    <Text>
-  {state__sidebar_state.depot_adress}
-</Text>
-  )
-}
-
-export function Grid_877aaff9bcb56b5c7ab5a50dfebbfc00 () {
-  const state__data_table_state = useContext(StateContexts.state__data_table_state)
-
-
-  return (
-    <DataTableGrid columns={state__data_table_state.columns} css={{"smoothScrollY": true}} data={state__data_table_state.data} pagination={true} resizable={true} search={true}/>
+    <Heading sx={{"textAlign": "center", "marginBottom": "1em"}}>
+  {state__sidebar_state.depot_name}
+</Heading>
   )
 }
 
@@ -107,15 +75,23 @@ export function Alertdialog_c96281feaf3b7cbd9261d92fb8b998ee () {
   )
 }
 
-export function Button_cc0cda26b8d2cad6ca4c35a66fba8941 () {
-  const [addEvents, connectError] = useContext(EventLoopContext);
+export function Text_2bb435c98cbb85d29f68337cd327b186 () {
+  const state__sidebar_state = useContext(StateContexts.state__sidebar_state)
 
-  const on_click_0922f10ec3b2f1bc33ad0184ca94cc10 = useCallback((_e) => addEvents([Event("state.alert_dialog_state.change", {})], (_e), {}), [addEvents, Event])
 
   return (
-    <Button onClick={on_click_0922f10ec3b2f1bc33ad0184ca94cc10}>
-  {`Zamknij`}
-</Button>
+    <Text>
+  {state__sidebar_state.brigades_num}
+</Text>
+  )
+}
+
+export function Grid_877aaff9bcb56b5c7ab5a50dfebbfc00 () {
+  const state__data_table_state = useContext(StateContexts.state__data_table_state)
+
+
+  return (
+    <DataTableGrid columns={state__data_table_state.columns} css={{"smoothScrollY": true}} data={state__data_table_state.data} pagination={true} resizable={true} search={true}/>
   )
 }
 
@@ -130,14 +106,38 @@ export function Text_18e2858f3f113be24440dab569919fe6 () {
   )
 }
 
-export function Heading_73213fd57920090aa2f067d6bb5028aa () {
+export function Button_ada31a03f76209a573d1a66423fa4bed () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+
+  const on_click_0922f10ec3b2f1bc33ad0184ca94cc10 = useCallback((_e) => addEvents([Event("state.alert_dialog_state.change", {})], (_e), {}), [addEvents, Event])
+
+  return (
+    <Button onClick={on_click_0922f10ec3b2f1bc33ad0184ca94cc10} sx={{"bottom": "70px", "position": "fixed"}}>
+  {`O stronie`}
+</Button>
+  )
+}
+
+export function Text_0e668654e2c4c07b29717671d68b67d0 () {
   const state__sidebar_state = useContext(StateContexts.state__sidebar_state)
 
 
   return (
-    <Heading sx={{"textAlign": "center", "marginBottom": "1em"}}>
-  {state__sidebar_state.depot_name}
-</Heading>
+    <Text>
+  {state__sidebar_state.depot_adress}
+</Text>
+  )
+}
+
+export function Button_cc0cda26b8d2cad6ca4c35a66fba8941 () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+
+  const on_click_0922f10ec3b2f1bc33ad0184ca94cc10 = useCallback((_e) => addEvents([Event("state.alert_dialog_state.change", {})], (_e), {}), [addEvents, Event])
+
+  return (
+    <Button onClick={on_click_0922f10ec3b2f1bc33ad0184ca94cc10}>
+  {`Zamknij`}
+</Button>
   )
 }
 
